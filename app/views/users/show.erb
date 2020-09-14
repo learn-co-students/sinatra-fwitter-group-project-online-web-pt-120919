@@ -1,0 +1,10 @@
+<h1>Welcome, <%= current_user.username %></h1>
+<% @user.tweets.each do |tweet| %>
+  <h3><%= current_user.username %> -- <%= tweet.created_at.to_s.split(" ").first %></h3>
+  <%= tweet.content %>
+  <a href="/tweets/<%= tweet.id %>/edit">Edit Tweet</a>
+  <br>
+<% end %>
+
+<p><a href="/tweets">Twitter Feed</a></p>
+<p><a href="/logout">Logout</a></p>
