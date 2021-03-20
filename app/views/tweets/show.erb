@@ -1,0 +1,13 @@
+<h1>Single Tweeet</h1>
+<h3>Created At: <%= @tweet.created_at.to_s.split(" ").first %></h3>
+<h3>Updated At: <%= @tweet.updated_at.to_s.split(" ").first %></h3>
+<p>Content: <%= @tweet.content %></p>
+
+<p><a href="/tweets/<%= @tweet.id %>/edit">Edit Tweet</a></p>
+<p><a href="/tweets">Twitter Feed</a></p>
+<p><a href="/users/<%= current_user.slug %>">My Tweets</a></p>
+
+<form action="/tweets/<%= @tweet.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Tweet">
+</form>
